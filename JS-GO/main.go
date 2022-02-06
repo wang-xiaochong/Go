@@ -18,7 +18,7 @@ func main() {
 	r := router.SetupRouter()
 	//r.Use(middleware.MiddleWare())    //全局中间件
 	router.InitRouter(r)
-	if err := r.Run(":7001"); err != nil {
+	if err := r.Run(":7777"); err != nil {
 		fmt.Printf("startup service failed, err:%v\n", err)
 	}
 }

@@ -2,12 +2,14 @@ package controller
 
 import (
 	utils "Example/Utils"
+	// "fmt"
 	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
 func JsUser(c *gin.Context)  {
+	// fmt.Println(time.Now().UTC())
 	var name = c.Query("name")
 	if name == "test" {
 		type Result struct {
@@ -22,8 +24,8 @@ func JsUser(c *gin.Context)  {
 			Age:  23,
 			ID: "123",
 		}
-		//3秒后返回结果 模拟延迟
-		time.Sleep(time.Duration(3)*time.Second)
+		//5秒后返回结果 模拟延迟
+		time.Sleep(time.Duration(5)*time.Second)
 		utils.Return(c, utils.SUCCESS,result)
 		return 
 	} else {
